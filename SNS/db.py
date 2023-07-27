@@ -49,7 +49,7 @@ def insert_user(user_id, user_name, birthday, filename, mail, salt, password):
 def select_all_posts():
     connection = get_connection()
     cursor = connection.cursor()
-    sql = 'SELECT * FROM snspost'
+    sql = 'SELECT * FROM snspost2'
     
     cursor.execute(sql)
     rows = cursor.fetchall()
@@ -61,7 +61,7 @@ def select_all_posts():
 def select_my_posts(mail):
     connection = get_connection()
     cursor = connection.cursor()
-    sql = 'SELECT * FROM snspost WHERE mail = %s'
+    sql = 'SELECT * FROM snspost2 WHERE mail = %s'
 
     cursor.execute(sql, (mail,))
     rows = cursor.fetchall()
@@ -111,7 +111,7 @@ def insert_post(mail,name,body,filename):
 
     connection = get_connection()
     cursor = connection.cursor()
-    sql = 'INSERT INTO snspost VALUES(default, %s, %s, %s, %s, %s)'
+    sql = 'INSERT INTO snspost2 VALUES(default, %s, %s, %s, %s, %s)'
 
     cursor.execute(sql, (mail,name,body,filename,date))
     count = cursor.rowcount # 更新件数を取得
