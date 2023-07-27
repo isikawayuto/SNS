@@ -4,4 +4,4 @@ build:
   packages:
     - libopencv-dev
 run:
-  web: gunicorn SNS/app:app --log-file=-
+  web: gunicorn ../SNS/app:app --log-file=-
