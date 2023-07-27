@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/setting.css')}}">
+{% endblock %}
+
+{% block title%}
+<div class="title">
+  <h1>設定</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+    <a href="{{url_for('logout')}}"><h1>ログアウト</h1></a>
+{% endblock %}

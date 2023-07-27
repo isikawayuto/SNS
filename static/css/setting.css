@@ -1,0 +1,30 @@
+.title{
+    color: deeppink;
+    padding-top: 25px;
+    margin-left: 550px;
+}
+a{
+    text-align: center;
+}
+h1{
+    font-size: 30px;
+}
+.post_line{
+    margin-top: 10px;
+    margin-left: 200px; 
+    margin-right: 200px; 
+    border: 7px solid #8b008b; 
+    border-radius: 10px;
+}
+.mypage{
+    display: flex;
+}
+.post_layout{
+    display: flex;
+}
+.post_img {
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+}
+.post_body{
+    padding-left: 50px;
+}

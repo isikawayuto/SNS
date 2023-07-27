@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/mypage.css')}}">
+{% endblock %}
+
+{% block title%}
+<div class="title">
+  <h1>マイページ</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class='post_line'>
+  <div class="mypage">
+    <img src="https://profile-image-4221104.s3.ap-northeast-1.amazonaws.com/{{my[4]}}" width="100px" height="100px">
+    <a href="#"><img src="{{url_for('static', filename='image/gear.png' )}}" style="padding-left: 730px;" width="100px" height="100px"></a>
+  </div>
+  <div class="mypage">
+    <h3 style="padding-left: 25px; font-size: 30px;">{{my[2]}}</h3>
+    <form action="{{url_for('register_post')}}" method="get">
+      <button style="margin-left: 710px; margin-top: 20px; width: 50px; height: 50px;">＋</button>
+    </form>
+  </div>
+    <hr style="border: solid #8d008d;">
+  {% for post in post_list %}
+    <div class="post_layout">
+      <img class="post_img"src='https://profile-image-4221104.s3.ap-northeast-1.amazonaws.com/{{post[4]}}' height="50px" width="50px">
+      <h3>{{post[2]}}</h3>
+      <h3 class="datetime">{{post[5]}}</h3>
+    </div>
+    <h3 class="post_body">{{post[3]}}</h3>
+    <hr size="5" color="#8b008b" noshade>
+  {% endfor %}
+</div>
+{% endblock %}

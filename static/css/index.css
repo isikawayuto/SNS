@@ -1,0 +1,47 @@
+header{
+    padding: 0px;
+    margin: 0px;
+    width:100%;
+    height: 120px;
+    background-color:  darkmagenta;
+}
+.hedder{
+    display: flex;
+}
+.hedder img{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.hedder h1{
+    color: deeppink;
+    padding-top: 25px;
+    margin-left: 475px;
+}
+body{
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+}
+form{
+    padding-left: 470px;
+}
+th{
+    padding-top: 10px;
+    text-align: right;
+}
+td{
+    text-align: left;
+}
+input{
+    padding: 1em 0.5em;
+    line-height: 1.5;
+}
+button{
+    font-size: 30px;
+    width: 200px;
+    margin-top: 50px;
+}
+.insert{
+    margin-top: 15px;
+    font-size: 30px;
+}

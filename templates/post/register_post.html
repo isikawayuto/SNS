@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/register_post.css')}}">
+{% endblock %}
+
+{% block title%}
+<div class="title">
+  <h1>投稿</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+<form action="{{url_for('post_comp')}}" method="post">
+    <input type="text" name="body" required=required><br>
+    <input type="submit" value="投稿">
+</form>
+{% endblock %}

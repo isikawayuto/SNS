@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/search.css')}}">
+{% endblock %}
+
+{% block title%}
+<div class="title">
+  <h1>検索</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+  {% for s in sikaku %}
+    <li>{{s}}</li>
+  {% endfor %}
+{% endblock %}

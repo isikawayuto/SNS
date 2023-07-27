@@ -1,0 +1,28 @@
+<html><head>
+    <meta charset="UTF-8">
+    <title>確認画面</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/confirmation.css')}}">
+    </head>
+    <header>
+      <div class="hedder">
+        <img src="{{url_for('static', filename='image/bird.png')}}" width="100px" height="100px">
+        <h1>確認画面</h1>
+      </div>
+    </header>
+    <body>
+      <div class="form">
+        <form action="{{url_for('register_exe')}}" enctype="multipart/form-data" method="post">
+          <table>
+            <tr><th><h3>メールアドレス:</h3></th><td>{{mail}}</td></tr>
+            <tr><th><h3>名前:</h3></th><td>{{user_name}}</td></tr>
+            <tr><th><h3>誕生日:</h3></th><td>{{birthday}}</td></tr>
+            <tr><th><h3>プロフィール画像:</h3></th><td><img src="https://profile-image-4221104.s3.ap-northeast-1.amazonaws.com/{{filename}}" height="150px" width="150px"></td></tr>
+            <tr><th><h3>PW:</h3></th><td>**********</td></tr>
+          </table>
+          <div class="button">
+            <input type="submit" value="登録">
+          </div>
+        </form>
+      </div>
+    </body>
+  </html>
