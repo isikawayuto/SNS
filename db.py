@@ -12,7 +12,7 @@ def get_salt():
     return user_id
 
 def get_hash(password, salt):
-    b_pw = bytes(password, 'utf-8')
+    b_pw = bytes(password, encoding='utf-8')
     b_salt = bytes(salt, 'utf-8')
     hashed_password = hashlib.pbkdf2_hmac('sha256', b_pw, b_salt, 1246).hex()
     return hashed_password
