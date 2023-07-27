@@ -24,7 +24,7 @@ def make_id():
     return userid
 
 def insert_user(user_id, user_name, birthday, filename, mail, salt, password):
-    sql = 'INSERT INTO snsaccount VALUES(default, %s, %s, %s, %s, %s, %s, %s)'
+    sql = 'INSERT INTO snsaccount2 VALUES(default, %s, %s, %s, %s, %s, %s, %s)'
 
     salt = get_salt()
     hashed_password = get_hash(password, salt)
@@ -73,7 +73,7 @@ def select_my_posts(mail):
 def select_my(mail):
     connection = get_connection()
     cursor = connection.cursor()
-    sql = 'SELECT * FROM snsaccount WHERE mail = %s'
+    sql = 'SELECT * FROM snsaccount2 WHERE mail = %s'
 
     cursor.execute(sql, (mail,))
     row = cursor.fetchone()
@@ -85,7 +85,7 @@ def select_my(mail):
 def select_name(mail):
     connection = get_connection()
     cursor = connection.cursor()
-    sql = 'SELECT name FROM snsaccount WHERE mail = %s'
+    sql = 'SELECT name FROM snsaccount2 WHERE mail = %s'
 
     cursor.execute(sql, (mail,))
     row = cursor.fetchone()
@@ -97,7 +97,7 @@ def select_name(mail):
 def select_filename(mail):
     connection = get_connection()
     cursor = connection.cursor()
-    sql = 'SELECT filename FROM snsaccount WHERE mail = %s'
+    sql = 'SELECT filename FROM snsaccount2 WHERE mail = %s'
 
     cursor.execute(sql, (mail,))
     row = cursor.fetchone()
@@ -122,7 +122,7 @@ def insert_post(mail,name,body,filename):
     connection.close()
 
 def login(mail, password):
-    sql = 'SELECT salt, password FROM snsaccount WHERE mail = %s'
+    sql = 'SELECT salt, password FROM snsaccount2 WHERE mail = %s'
     flg = False
 
     try :

@@ -1,4 +1,4 @@
-CREATE TABLE snsaccount (
+CREATE TABLE snsaccount2 (
     id serial,
     userid VARCHAR(16),
     name VARCHAR(64),
@@ -18,5 +18,5 @@ CREATE TABLE snspost2 (
     created_at  date,
     PRIMARY KEY(id),
     FOREIGN KEY(mail)
-    REFERENCES snsaccount(mail)
+    REFERENCES snsaccount2(mail)
 );
