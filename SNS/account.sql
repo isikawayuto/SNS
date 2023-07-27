@@ -9,7 +9,7 @@ CREATE TABLE snsaccount (
     password VARCHAR(64),
     PRIMARY KEY(id)
 );
-CREATE TABLE snspost (
+CREATE TABLE snspost2 (
     id serial,
     mail VARCHAR(256),
     name VARCHAR(64),
