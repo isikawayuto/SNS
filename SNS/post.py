@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template
-import db
+import SNS.db as db
 
 # Blueprint インスタンスを作成
 # 第1引数は Blueprint の名前
