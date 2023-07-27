@@ -7,7 +7,7 @@ import db, string, random, boto3
 app = Flask(__name__)
 app.secret_key = ''.join(random.choices(string.ascii_letters, k=256))
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['POST'])
 def index():
     msg = request.args.get('msg')
 
