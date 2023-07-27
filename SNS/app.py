@@ -1,13 +1,9 @@
 import io
-from importlib import import_module
 from flask import Flask, render_template, request, redirect, url_for, session
 from datetime import timedelta
 from dotenv import load_dotenv
 import db as db, string, random, boto3
 
-
-module1 = import_module("heroku.yml")
-module1.Worker.greeting()
 
 app = Flask(__name__)
 app.secret_key = ''.join(random.choices(string.ascii_letters, k=256))
