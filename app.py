@@ -1,4 +1,5 @@
 import io
+import os
 from flask import Flask, render_template, request, redirect, url_for, session
 from datetime import timedelta
 from dotenv import load_dotenv
@@ -6,7 +7,7 @@ import db as db, string, random, boto3
 
 
 app = Flask(__name__)
-app.secret_key = ''.join(random.choices(string.ascii_letters, k=256))
+app.secret_key = url = os.environ['secret_key']
 
 @app.route('/', methods=['GET'])
 def index():
