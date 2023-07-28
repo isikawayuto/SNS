@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/search_ok.css')}}">
+{% endblock %}
+
+{% block title%}
+<div class="title">
+  <h1>検索</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+{% for l in list %}
+<div class="post_layout">
+    <img src="https://profile-image-4221104.s3.ap-northeast-1.amazonaws.com/{{l[4]}}">
+    <h3>{{l[1]}}</h3>
+    <h3 style="padding-left: 50px;">{{l[2]}}</h3>
+    <hr size="5" color="#8b008b" noshade>
+</div>
+{% endfor %}
+
+{% endblock %}

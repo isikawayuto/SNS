@@ -11,7 +11,8 @@
 {% endblock %}
 
 {% block content %}
-  {% for s in sikaku %}
-    <li>{{s}}</li>
-  {% endfor %}
+  <form style="margin-top: 30px; text-align: center;" action="{{url_for('search_account')}}" method="post">
+    <input type="text" name="search" required="required">
+    <input type="submit" value="検索">
+  </form>
 {% endblock %}

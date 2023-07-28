@@ -69,6 +69,19 @@ def select_my_posts(mail):
     cursor.close()
     connection.close()
     return rows
+def select_account(search):
+    connection = get_connection()
+    cursor = connection.cursor()
+    sql = 'SELECT * FROM snsaccount2  WHERE userid LIKE %s or name LIKE %s'
+
+    pattern=f"%{search}%"
+
+    cursor.execute(sql, (pattern,pattern,))
+    rows = cursor.fetchall()
+
+    cursor.close()
+    connection.close()
+    return rows
 
 def select_my(mail):
     connection = get_connection()

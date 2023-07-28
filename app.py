@@ -61,6 +61,22 @@ def access():
             return render_template('post/access.html', post_list=my_post, my=my)
     else :
         return redirect(url_for('index'))   # session がなければログイン画面にリダイレクト
+@app.route('/search')
+def search():
+    if 'user' in session:
+        return render_template('post/search.html')   # session があれば mypage.html を表示
+    else :
+        return render_template('index.html') 
+@app.route('/search_account', methods=['POST'])
+def search_account():
+    if 'user' in session:
+        search = request.form.get('search')
+        print(search)
+        list = db.select_account(search)
+        print(list)
+        return render_template('post/search_ok.html', list=list)   # session があれば mypage.html を表示
+    else :
+        return render_template('index.html') 
 
 @app.route('/mypage', methods=['GET'])
 def mypage():
