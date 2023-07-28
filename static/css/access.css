@@ -3,6 +3,9 @@
     padding-top: 25px;
     margin-left: 500px;
 }
+body{
+    height: 300px;
+}
 .post_line{
     margin-top: 10px;
     margin-left: 200px; 
@@ -10,18 +13,18 @@
     border: 7px solid #8b008b; 
     border-radius: 10px;
 }
+.mypage{
+    display: flex;
+}
 .post_layout{
-    padding-left: 30px;
     display: flex;
 }
 .post_img {
     border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
-    width:  50px;       /* ※縦横を同値に */
-    height: 50px;       /* ※縦横を同値に */
-}
-.datetime{
-    padding-left: 650px;
 }
 .post_body{
     padding-left: 50px;
+}
+.datetime{
+    padding-left: 650px;
 }

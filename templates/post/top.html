@@ -14,10 +14,13 @@
   <div class='post_line'>
     {% for post in post_list %}
       <div class="post_layout">
-        <img class="post_img"src='https://profile-image-4221104.s3.ap-northeast-1.amazonaws.com/{{post[4]}}' height="50px" width="50px">
-        <h3>{{post[2]}}</h3>
+        <form action="{{url_for('access')}}" method="post">
+          <input type="hidden" name="mail" value="{{post[1]}}">
+          <input type="image" class="post_img" src='https://profile-image-4221104.s3.ap-northeast-1.amazonaws.com/{{post[4]}}'>
+        </form>
         <h3 class="datetime">{{post[5]}}</h3>
       </div>
+      <h3 style="margin-left: 30px;" >{{post[2]}}</h3>
       <h3 class="post_body">{{post[3]}}</h3>
       <hr size="5" color="#8b008b" noshade>
     {% endfor %}

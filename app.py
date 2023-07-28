@@ -44,6 +44,24 @@ def top():
     else :
         return redirect(url_for('index'))   # session がなければログイン画面にリダイレクト
 
+@app.route('/access', methods=['POST'])
+# session にキー：'user' があるか判定
+def access():
+    if 'user' in session:
+        my_mail = session.get('mail')
+        print(my_mail)
+        mail = request.form.get('mail')
+        print(mail)
+        my = db.select_my(mail)
+        print(my)
+        my_post = db.select_my_posts(mail)
+        if mail == my_mail:
+            return render_template('post/mypage.html', post_list=my_post, my=my)   # session があれば mypage.html を表示
+        else :
+            return render_template('post/access.html', post_list=my_post, my=my)
+    else :
+        return redirect(url_for('index'))   # session がなければログイン画面にリダイレクト
+
 @app.route('/mypage', methods=['GET'])
 def mypage():
     # session にキー：'user' があるか判定
