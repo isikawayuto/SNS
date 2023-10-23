@@ -7,7 +7,8 @@ import db as db, string, random, boto3
 
 
 app = Flask(__name__)
-app.secret_key = url = os.environ['secret_key']
+#app.secret_key = url = os.environ['secret_key']
+app.secret_key = os.environ.get("SECRET_KEY") or os.urandom(24)
 
 @app.route('/', methods=['GET'])
 def index():
